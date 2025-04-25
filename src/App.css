@@ -1,38 +1,377 @@
-.App {
+*{
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  width:80%;
+  margin:20px auto;
+ 
+}
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.product-table th,
+.product-table td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.product-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.product-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Button and link styling */
+.product-table button {
+  padding: 5px 10px;
+  margin-top: 5px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-table button:hover {
+  background-color: #d32f2f;
+}
+
+.product-table a {
+  text-decoration: none;
+  color: #2196f3;
+  margin-right: 10px;
+}
+
+.product-table a:hover {
+  text-decoration: underline;
+}
+
+/* Container for product details */
+.product-details {
+  padding: 20px;
+  margin: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+/* Title styling */
+.product-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Product information styling (Price and Description) */
+.product-info {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.product-price,
+.product-description {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+
+.product-links a {
+  text-decoration: none;
+  color: #2196f3;  /* Blue color for links */
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.product-links a:hover {
+  text-decoration: underline;
+}
+
+
+.back-link,
+.edit-link {
+  padding: 8px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.title{
+  margin:30px 0 40px;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.edit-form label{
+display:flex;
+font-weight:600;
+
+}
+.edit-form input,
+.edit-form textarea{
+  padding:10px;
+  width:50%;
+}
+
+.form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-top: 20px;
+}
+
+.update-btn {
+  align-self: flex-end;
+  padding:10px;
+  margin-right:20px;
+  border-right:5px solid black;
+  border-bottom:5px solid black;
+  font-size:20px;
+  cursor:pointer;
+}
+
+.back-link {
+  align-self: flex-end;
+  margin-top: 10px;
+  text-decoration: none;
+  color: blue;
+  margin-right:20px;
+}
+.updated-product {
+
+  margin-top:50px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.product-info {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #555;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.product-info strong {
+  color: #000;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #007bff;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-link:hover {
+  background-color: #007bff;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.new-product-link {
+  display: inline-block;
+  margin: 20px 0; 
+  font-size: 18px;
+ 
+  color:blue;
+  font-weight: bold;
+  padding: 10px 20px;
+ 
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.add-product-form {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px; 
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical; 
+  min-height: 100px;
+}
+
+button {
+  border-right:5px solid black;
+  border-bottom:5px solid black;
+
+  font-size: 16px;
+  padding: 10px 20px;
+  
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 30px;
+}
+
+.go-back-link {
+  margin:20px 20px 30px 0;
+  font-size: 16px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.go-back-link:hover {
+  color: #0056b3;
+}
+
+.delete-message {
+  background-color: #d4edda;
+  color:red;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.notfound-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.notfound-title {
+  font-size: 8rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.notfound-text {
+  font-size: 1.5rem;
+  margin: 20px 0;
+  max-width: 600px;
+}
+
+.notfound-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: white;
+  color: #764ba2;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.notfound-button:hover {
+  background-color: #764ba2;
+  color: white;
 }
